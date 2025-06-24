@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>我的工作流 | 纵有疾风起</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://vincentfox.github.io/blog//favicon.ico?v=1750754186650">
+<link rel="stylesheet" href="https://vincentfox.github.io/blog//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="mac
+warp
+raycast 卸载 自动退出
+brew install neofetch  系统状态
+echo 'neofetch' &gt;&gt; .zshrc
+brew install neovim
+brew install em..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://vincentfox.github.io/blog/">
+        <img src="https://vincentfox.github.io/blog//images/avatar.png?v=1750754186650" class="site-logo">
+        <h1 class="site-title">纵有疾风起</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://vincentfox.github.io/blog/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://vincentfox.github.io/blog/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://vincentfox.github.io/blog/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://vincentfox.github.io/blog/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/VincentFox" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      安全工程师的思考及爱好
+    </div>
+    <div class="site-footer">
+      Powered by 2023 | <a class="rss" href="https://vincentfox.github.io/blog//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">我的工作流</h2>
+            <div class="post-date">2025-05-16</div>
+            
+            <div class="post-content" v-pre>
+              <p>mac<br>
+warp<br>
+raycast 卸载 自动退出</p>
+<p>brew install neofetch  系统状态<br>
+echo 'neofetch' &gt;&gt; .zshrc</p>
+<p>brew install neovim</p>
+<p>brew install emacs</p>
+<p>清理工具<br>
+curl -fsSL https://dub.sh/mcleanup | bash -s update 进行安装，然后在 .zshrc 里面加上 alias clean=&quot;sudo /usr/local/bin/mac-cleanup&quot;，直接命令行 clean 清理工具</p>
+<p>brew install fzf  查找</p>
+<p>brew install yazi 文件管理</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://vincentfox.github.io/blog/post/mysql-tiao-guo-mi-ma-yan-zheng-xiu-gai-mi-ma/">
+                  <h3 class="post-title">
+                    Mysql 跳过密码验证，修改密码
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

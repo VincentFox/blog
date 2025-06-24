@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Mysql 跳过密码验证，修改密码 | 纵有疾风起</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://vincentfox.github.io/blog//favicon.ico?v=1750754186650">
+<link rel="stylesheet" href="https://vincentfox.github.io/blog//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="1、修改Mysql的配置文件：
+找到MySQL配置文件，在[mysqld]下添加skip-grant-tables，关闭mysql服务并重新开启；
+然后输入命令：mysql -u root -p
+回车后，要求输入密码，直接回车跳过，则直接进..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://vincentfox.github.io/blog/">
+        <img src="https://vincentfox.github.io/blog//images/avatar.png?v=1750754186650" class="site-logo">
+        <h1 class="site-title">纵有疾风起</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://vincentfox.github.io/blog/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://vincentfox.github.io/blog/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://vincentfox.github.io/blog/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://vincentfox.github.io/blog/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/VincentFox" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      安全工程师的思考及爱好
+    </div>
+    <div class="site-footer">
+      Powered by 2023 | <a class="rss" href="https://vincentfox.github.io/blog//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Mysql 跳过密码验证，修改密码</h2>
+            <div class="post-date">2025-04-29</div>
+            
+            <div class="post-content" v-pre>
+              <p>1、修改Mysql的配置文件：</p>
+<p>找到MySQL配置文件，在[mysqld]下添加skip-grant-tables，关闭mysql服务并重新开启；</p>
+<p>然后输入命令：mysql -u root -p</p>
+<p>回车后，要求输入密码，直接回车跳过，则直接进入MySQL</p>
+<p>2、修改密码：</p>
+<p>输入以下命令开始修改root用户的密码</p>
+<p>mysql&gt; update mysql.user set password=PASSWORD(‘新密码‘) where User=‘root‘;</p>
+<p>刷新权限表 ：</p>
+<p>mysql&gt; flush privileges;</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://vincentfox.github.io/blog/post/nginxmodesecurity-fang-yu-fang-an/">
+                  <h3 class="post-title">
+                    Nginx+modscrutiny实现WAF防御
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

