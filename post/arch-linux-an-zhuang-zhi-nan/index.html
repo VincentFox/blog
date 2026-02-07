@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Arch Linux 安装指南 | 纵有疾风起</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://vincentfox.github.io/blog//favicon.ico?v=1770475890200">
+<link rel="stylesheet" href="https://vincentfox.github.io/blog//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Arch Linux 安装指南
+1. 准备工作
+
+从官网下载镜像并制作启动盘，或使用Ventoy
+启动前按E编辑启动参数，调整分辨率避免字体太小
+开机选择第一个选项进入控制台（默认shell是zsh）
+
+2. 基础设置
+设置字体
+setfo..." />
+    <meta name="keywords" content="系统" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://vincentfox.github.io/blog/">
+        <img src="https://vincentfox.github.io/blog//images/avatar.png?v=1770475890200" class="site-logo">
+        <h1 class="site-title">纵有疾风起</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://vincentfox.github.io/blog/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="https://vincentfox.github.io/blog/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="https://vincentfox.github.io/blog/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="https://vincentfox.github.io/blog/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/VincentFox" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      安全工程师的思考及爱好
+    </div>
+    <div class="site-footer">
+      Powered by 2023 | <a class="rss" href="https://vincentfox.github.io/blog//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Arch Linux 安装指南</h2>
+            <div class="post-date">2026-02-07</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="arch-linux-安装指南">Arch Linux 安装指南</h1>
+<h2 id="1-准备工作">1. 准备工作</h2>
+<ul>
+<li>从官网下载镜像并制作启动盘，或使用Ventoy</li>
+<li>启动前按E编辑启动参数，调整分辨率避免字体太小</li>
+<li>开机选择第一个选项进入控制台（默认shell是zsh）</li>
+</ul>
+<h2 id="2-基础设置">2. 基础设置</h2>
+<h3 id="设置字体">设置字体</h3>
+<pre><code class="language-bash">setfont ter-132n
+setfont /usr/share/kdb/consolefonts/LatGrkCyr-12x22.psfu.gz
+</code></pre>
+<h3 id="键盘布局">键盘布局</h3>
+<pre><code class="language-bash">loadkeys colemak  # 改变键盘布局
+</code></pre>
+<h3 id="自定义键位">自定义键位</h3>
+<p>创建配置文件：</p>
+<pre><code class="language-bash">vim keyboard.conf
+</code></pre>
+<p>在文件中添加：</p>
+<pre><code>1 = Caps Lock
+58 = Esc
+</code></pre>
+<p>加载自定义键位：</p>
+<pre><code class="language-bash">loadkeys keyboard.conf
+</code></pre>
+<h2 id="3-验证启动模式">3. 验证启动模式</h2>
+<p>判断机器是否支持UEFI模式启动：</p>
+<pre><code class="language-bash">ls /sys/firmware/efi/efivars
+</code></pre>
+<ul>
+<li>如果有大量输出，说明电脑处于UEFI模式</li>
+<li>如果输出类似 <code>ls: cannot access '/sys/firmware/efi/efivars': No such file or directory</code>，说明电脑处于BIOS模式</li>
+</ul>
+<p>目前的引导方式主要分为UEFI/EFI引导+GPT分区表与BIOS(LEGACY)引导+MBR分区表两种，几乎比较新的机器都采用了UEFI/EFI/GPT引导的方式。</p>
+<h2 id="4-网络配置">4. 网络配置</h2>
+<p>Arch Linux需要联网安装，可以配置有线网卡或无线网络。</p>
+<h3 id="有线网络配置">有线网络配置</h3>
+<pre><code class="language-bash">ip route add default via 88.88.88.254  # 配置默认网关
+ping baidu.com  # 测试网络连接
+</code></pre>
+<h3 id="dns配置">DNS配置</h3>
+<pre><code class="language-bash">chattr +i /etc/resolv.conf  # 防止DNS配置被修改
+</code></pre>
+<h3 id="无线网络配置">无线网络配置</h3>
+<h4 id="检查无线网卡状态">检查无线网卡状态</h4>
+<pre><code class="language-bash">rfkill list
+</code></pre>
+<p>如果无线网卡被锁定，使用以下命令解锁：</p>
+<pre><code class="language-bash">rfkill unblock wifi
+</code></pre>
+<h4 id="使用iwd连接无线网络">使用iwd连接无线网络</h4>
+<pre><code class="language-bash">iwctl  # 进入联网模式
+[iwd]# device list  # 列出无线设备名称（通常为wlan0）
+[iwd]# station wlan0 scan  # 扫描可用网络
+[iwd]# station wlan0 get-networks  # 显示扫描到的网络
+[iwd]# station wlan0 connect &quot;网络名称&quot;  # 连接指定网络
+password: 输入密码
+[iwd]# exit  # 退出联网模式
+</code></pre>
+<h3 id="时间同步">时间同步</h3>
+<pre><code class="language-bash">timedatectl set-ntp true  # 启用NTP时间同步
+timedatectl status  # 检查时间同步状态
+</code></pre>
+<h2 id="5-磁盘分区">5. 磁盘分区</h2>
+<h3 id="查看磁盘信息">查看磁盘信息</h3>
+<pre><code class="language-bash">fdisk -l  # 查看磁盘信息
+cfdisk /dev/sda  # 使用cfdisk分区工具
+</code></pre>
+<h3 id="分区方案建议">分区方案建议</h3>
+<ul>
+<li>512M EFI系统引导分区（类型为EFI，BIOS模式不需要此分区）</li>
+<li>SWAP分区（建议为内存的2倍大小）</li>
+<li>剩余空间作为根分区（/）</li>
+</ul>
+<h2 id="6-格式化和挂载分区">6. 格式化和挂载分区</h2>
+<h3 id="格式化分区">格式化分区</h3>
+<pre><code class="language-bash">mkfs.fat -F32 /dev/sda1  # 格式化EFI分区（如果使用UEFI）
+mkfs.ext4 /dev/sda2  # 格式化根分区
+mkswap /dev/sda3  # 格式化SWAP分区
+</code></pre>
+<h3 id="挂载分区">挂载分区</h3>
+<pre><code class="language-bash">mount /dev/sda2 /mnt  # 挂载根分区
+mkdir -p /mnt/boot/efi  # 创建EFI挂载点（UEFI模式）
+mount /dev/sda1 /mnt/boot/efi  # 挂载EFI分区（UEFI模式）
+swapon /dev/sda3  # 启用SWAP分区
+</code></pre>
+<h2 id="7-配置软件源和安装基本系统">7. 配置软件源和安装基本系统</h2>
+<h3 id="配置软件源">配置软件源</h3>
+<pre><code class="language-bash">vim /etc/pacman.conf  # 取消Color注释以启用彩色输出
+</code></pre>
+<p>编辑镜像源：</p>
+<pre><code class="language-bash">vim /etc/pacman.d/mirrorlist
+</code></pre>
+<p>添加国内镜像源（推荐）：</p>
+<pre><code>Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.zju.edu.cn/archlinux/$repo/os/$arch
+</code></pre>
+<h3 id="安装基本系统">安装基本系统</h3>
+<pre><code class="language-bash">pacstrap /mnt base linux linux-firmware  # 安装基本系统
+</code></pre>
+<h2 id="8-生成fstab文件">8. 生成fstab文件</h2>
+<pre><code class="language-bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab  # 生成fstab文件
+</code></pre>
+<h2 id="9-配置新系统">9. 配置新系统</h2>
+<h3 id="进入新系统">进入新系统</h3>
+<pre><code class="language-bash">arch-chroot /mnt  # 进入新安装的系统
+</code></pre>
+<h3 id="配置时区">配置时区</h3>
+<pre><code class="language-bash">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime  # 设置时区
+hwclock --systohc  # 同步硬件时钟
+</code></pre>
+<h3 id="配置本地化">配置本地化</h3>
+<pre><code class="language-bash">vim /etc/locale.gen  # 编辑locale.gen文件
+</code></pre>
+<p>取消注释以下行：</p>
+<pre><code>en_US.UTF-8 UTF-8
+zh_CN.UTF-8 UTF-8
+</code></pre>
+<p>生成locale：</p>
+<pre><code class="language-bash">locale-gen  # 生成locale
+</code></pre>
+<p>设置系统语言：</p>
+<pre><code class="language-bash">echo &quot;LANG=en_US.UTF-8&quot; &gt; /etc/locale.conf  # 设置系统语言
+</code></pre>
+<h3 id="配置主机名">配置主机名</h3>
+<pre><code class="language-bash">echo &quot;wxc&quot; &gt; /etc/hostname  # 设置主机名
+</code></pre>
+<p>编辑hosts文件：</p>
+<pre><code class="language-bash">vim /etc/hosts
+</code></pre>
+<p>添加以下内容：</p>
+<pre><code>127.0.0.1 localhost
+::1       localhost
+127.0.1.1 wxc.localdomain wxc
+</code></pre>
+<h3 id="设置root密码">设置root密码</h3>
+<pre><code class="language-bash">passwd  # 设置root用户密码
+</code></pre>
+<h2 id="10-安装引导程序">10. 安装引导程序</h2>
+<h3 id="bios模式">BIOS模式</h3>
+<pre><code class="language-bash">pacman -S grub  # 安装GRUB
+grub-install --target=i386-pc /dev/sda  # 安装到硬盘
+grub-mkconfig -o /boot/grub/grub.cfg  # 生成配置文件
+</code></pre>
+<h3 id="uefi模式">UEFI模式</h3>
+<pre><code class="language-bash">pacman -S grub efibootmgr  # 安装GRUB和efibootmgr
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=GRUB  # 安装到EFI分区
+grub-mkconfig -o /boot/grub/grub.cfg  # 生成配置文件
+</code></pre>
+<h3 id="检测其他操作系统可选">检测其他操作系统（可选）</h3>
+<pre><code class="language-bash">pacman -S os-prober ntfs-3g  # 安装os-prober和ntfs-3g
+grub-mkconfig -o /boot/grub/grub.cfg  # 重新生成配置文件以包含其他系统
+</code></pre>
+<h2 id="11-安装常用软件包">11. 安装常用软件包</h2>
+<pre><code class="language-bash">pacman -S neovim vim zsh wpa_supplicant dhcpcd intel-ucode  # 安装常用软件包
+</code></pre>
+<h2 id="12-创建普通用户">12. 创建普通用户</h2>
+<pre><code class="language-bash">useradd -m -G wheel test  # 创建用户test并加入wheel组
+passwd test  # 设置用户密码
+</code></pre>
+<h3 id="配置sudo权限">配置sudo权限</h3>
+<pre><code class="language-bash">EDITOR=nvim visudo  # 编辑sudoers文件
+</code></pre>
+<p>取消注释以下行以允许wheel组用户使用sudo：</p>
+<pre><code>%wheel ALL=(ALL) ALL
+</code></pre>
+<h2 id="13-完成安装">13. 完成安装</h2>
+<pre><code class="language-bash">exit  # 退出chroot环境
+umount -R /mnt  # 卸载所有挂载点
+reboot  # 重启系统
+</code></pre>
+<h2 id="14-首次启动后配置">14. 首次启动后配置</h2>
+<h3 id="系统更新">系统更新</h3>
+<pre><code class="language-bash">pacman -Syu  # 更新系统
+</code></pre>
+<h3 id="安装常用工具">安装常用工具</h3>
+<pre><code class="language-bash">pacman -S man  # 安装手册
+pacman -S base-devel  # 安装开发工具
+</code></pre>
+<h3 id="配置用户环境">配置用户环境</h3>
+<pre><code class="language-bash">chsh -s /bin/zsh  # 将默认shell改为zsh（如果已安装）
+</code></pre>
+<p>恭喜！您已成功安装Arch Linux！</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://vincentfox.github.io/blog/tag/fRbENM4NDU/" class="tag">
+                    系统
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://vincentfox.github.io/blog/post/mysql-tiao-guo-mi-ma-yan-zheng-xiu-gai-mi-ma/">
+                  <h3 class="post-title">
+                    Mysql 跳过密码验证，修改密码
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
